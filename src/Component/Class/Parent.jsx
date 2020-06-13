@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Child from './Child'
+import Child2 from './Child2'
 
 class Parent extends Component {
     constructor(props) {
@@ -17,10 +18,15 @@ class Parent extends Component {
 
     render() { 
         return ( 
-            <Child 
-                stock={this.state.stock}
-                fungsi={this.beliProduct.bind(this)}
-            />
+            <div>
+                <Child 
+                    stock={this.state.stock}
+                    fungsi={this.beliProduct.bind(this)}
+                />
+                <Child2
+                    stock={this.state.stock}
+                />
+            </div>
          );
     }
 }
