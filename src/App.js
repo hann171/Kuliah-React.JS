@@ -5,6 +5,7 @@ import {BrowserRouter, Route, Switc} from 'react-router-dom'
 import NavbarComp from './Component/Functional/NavbarComp';
 import HomePage from './Component/Functional/HomePage';
 import About from './Component/Functional/AboutComp';
+import Detail from './Component/Functional/DetailComp';
 //import logo from './logo.svg';
 //import './App.css';
 //import Home from './Component/Functional/Home';
@@ -18,6 +19,7 @@ const App = () => {
       <switch>
         <Route exact path="/" component={HomePage}/>
         <Route exact path="/about" component={About}/>
+        <Route exact path="/detail/:id" component={Detail}/>
       </switch>
     </BrowserRouter>
   );
