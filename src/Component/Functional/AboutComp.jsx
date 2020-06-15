@@ -1,4 +1,5 @@
 import React from 'react'
+import { Jumbotron, Button } from 'reactstrap';
 
 function AboutComp() {
     return (

@@ -15,10 +15,10 @@ const App = () => {
   return (
     <BrowserRouter>
       <NavbarComp/>
-      <Switch>
+      <switch>
         <Route exact path="/" component={HomePage}/>
         <Route exact path="/about" component={About}/>
-      </Switch>
+      </switch>
     </BrowserRouter>
   );
 }
