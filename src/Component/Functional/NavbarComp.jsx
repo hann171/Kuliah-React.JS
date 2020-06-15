@@ -27,10 +27,10 @@ const NavbarComp = (props) => {
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
                         <NavItem>
-                            <NavLink href="/components/">Home</NavLink>
+                            <NavLink href="/">Home</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="https://github.com/reactstrap/reactstrap">About</NavLink>
+                            <NavLink href="/about">About</NavLink>
                         </NavItem>
                     </Nav>
                     <NavbarText>Simple Text</NavbarText>
