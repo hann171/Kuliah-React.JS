@@ -8,6 +8,7 @@ import About from './Component/Functional/AboutComp';
 import Detail from './Component/Functional/DetailComp';
 import ListComp from './Component/Class/ListComp';
 import TambahComp from './Component/Class/TambahComp';
+import EditComp from './Component/Functional/EditComp';
 //import logo from './logo.svg';
 //import './App.css';
 //import Home from './Component/Functional/Home';
@@ -24,6 +25,7 @@ const App = () => {
         <Route exact path="/detail/:id" component={Detail}/>
         <Route exact path="/mahasiswa" component={ListComp}/>
         <Route exact path="/mahasiswa/tambah" component={TambahComp}/>
+        <Route exact path="/mahasiswa/edit" component={EditComp}/>
       </switch>
     </BrowserRouter>
   );

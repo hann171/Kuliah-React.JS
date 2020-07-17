@@ -1,22 +1,23 @@
 import React, { PureComponent } from 'react'
 import axios from 'axios'
 import qs from 'querystring'
-import {Table, Button, Container, navlink, Alert} from 'reactstrap'
+import { Table, Button, Container, navlink, Alert } from 'reactstrap'
+import {Link} from 'react-router-dom'
 
 const api = 'http://localhost:3001'
 
 export default class ListComp extends PureComponent {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
-            mahasiswa : [],
+            mahasiswa: [],
             response: '',
             display: 'none'
         }
     }
 
-    componentDidMount(){
-        axios.get(api+'/tampil').then(res=>{
+    componentDidMount() {
+        axios.get(api + '/tampil').then(res => {
             this.setState({
                 mahasiswa: res.data.values
             })
@@ -28,27 +29,43 @@ export default class ListComp extends PureComponent {
             <Container>
                 <h2>Data Mahasiswa</h2>
                 <navlink><Button color="success" href="/mahasiswa/tambah">Tambah Data</Button></navlink>
-            <hr/>
-            <Table className="table-bordered">
-                <thead>
-                    <tr>
-                        <th>NIM</th>
-                        <th>Nama</th>
-                        <th>Jurusan</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {this.state.mahasiswa.map(mahasiswa=>
-                       <tr key={mahasiswa.id_mahasiswa}>
-                           <td>{mahasiswa.nim}</td>
-                           <td>{mahasiswa.nama}</td>
-                           <td>{mahasiswa.jurusan}</td>
-                           <td>Edit | Hapus</td>
-                       </tr>
-                    )}
-                </tbody>
-            </Table>
+                <hr />
+                <Table className="table-bordered">
+                    <thead>
+                        <tr>
+                            <th>NIM</th>
+                            <th>Nama</th>
+                            <th>Jurusan</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.state.mahasiswa.map(mahasiswa =>
+                            <tr key={mahasiswa.id_mahasiswa}>
+                                <td>{mahasiswa.nim}</td>
+                                <td>{mahasiswa.nama}</td>
+                                <td>{mahasiswa.jurusan}</td>
+                                <td>
+                                    <Link to=
+                                        {
+                                            {
+                                                pathname: `/mahasiswa/edit`,
+                                                state: {
+                                                    id_mahasiswa: mahasiswa.id_mahasiswa,
+                                                    nim: mahasiswa.nim,
+                                                    nama: mahasiswa.nama,
+                                                    jurusan: mahasiswa.jurusan
+                                                }
+                                            }
+                                        }>
+
+                                        <Button>Edit</Button>
+                                    </Link>
+                                </td>
+                            </tr>
+                        )}
+                    </tbody>
+                </Table>
             </Container>
         )
     }
