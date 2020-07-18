@@ -9,6 +9,8 @@ import Detail from './Component/Functional/DetailComp';
 import ListComp from './Component/Class/ListComp';
 import TambahComp from './Component/Class/TambahComp';
 import EditComp from './Component/Functional/EditComp';
+import KelasComp from './Component/Hooks/Class/KelasComp';
+import HooksComp from './Component/Hooks/Functional/HooksComp';
 //import logo from './logo.svg';
 //import './App.css';
 //import Home from './Component/Functional/Home';
@@ -26,6 +28,8 @@ const App = () => {
         <Route exact path="/mahasiswa" component={ListComp}/>
         <Route exact path="/mahasiswa/tambah" component={TambahComp}/>
         <Route exact path="/mahasiswa/edit" component={EditComp}/>
+        <Route exact path="/kelas" component={KelasComp}/>
+        <Route exact path="/hooks" component={HooksComp}/>
       </switch>
     </BrowserRouter>
   );
