@@ -14,6 +14,7 @@ import HooksComp from './Component/Hooks/Functional/HooksComp';
 import HooksUseEffect from './Component/Hooks/Functional/HooksUseEffect';
 import { CartContext } from './CartContext';
 import ProductComp from './Component/Hooks/Functional/ProductComp';
+import HookReducer from './Component/Hooks/Functional/HookReducer';
 //import logo from './logo.svg';
 //import './App.css';
 //import Home from './Component/Functional/Home';
@@ -39,6 +40,7 @@ const App = () => {
           <Route exact path="/hooks" component={HooksComp} />
           <Route exact path="/useeffects" component={HooksUseEffect} />
           <Route exact path="/product" component={ProductComp} />
+          <Route exact path="/reducer" component={HookReducer} />
         </switch>
       </CartContext.Provider>
     </BrowserRouter>
